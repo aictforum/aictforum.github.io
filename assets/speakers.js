@@ -50,7 +50,7 @@ const SPEAKERS = [
     photo: "assets/speakers/lee-kihyung.jpg",
     org: "국립아시아문화전당재단",
     role: "융합미디어사업단장 · 어린이사업본부장",
-    title: "인공감정 구현을 위한 잠재공간의 귀납적 편향(Inductive Bias) 아키텍처 설계: 물리적 문화기술(Physical CT) 시대의 가치정렬(Value Alignment) 전략",
+    title: "인공감정 구현을 위한 잠재공간의 귀납적 편향(Inductive Bias) 아키텍처 설계:\n물리적 문화기술(Physical CT) 시대의 가치정렬(Value Alignment) 전략",
     summary: "AI의 추론 능력이 빠르게 고도화되면서 개인·공동체·국가와 AI 사이의 주권(Sovereignty) 문제가 새로운 화두로 떠오르고 있다. 거대언어모델 기업들은 RLHF, Constitutional AI 등의 기법으로 가치 정렬을 시도하고 있으나, 이러한 방식은 주로 학습된 모델의 출력 행동을 사후적으로 조정하는 데 초점을 둔다. 본 세션에서는 신경망의 출력층 통제를 넘어, 잠재공간에 인공감정의 구조를 사전 설계하는 '귀납적 편향(Inductive Bias) 아키텍처'를 제안한다. 이를 통해 AI-CT 연구의 새로운 방향과 인문예술–과학기술 융합 연구의 가능성을 공유하고자 한다.",
     bio: "한국예술종합학교 영상원에서 예술전문사 학위를 취득하였으며, 아시아문화원 창제작센터 융복합콘텐츠개발팀장 및 센터장 직무대리를 역임하였다. 현재 국립아시아문화전당재단 융합미디어사업 단장 및 어린이사업 본부장으로 재직 중이며, 문화예술과 첨단기술을 접목한 다양한 사업을 이끌고 있다. 문화체육관광부와 한국콘텐츠진흥원의 문화기술 연구개발사업을 비롯해 인공지능 기반 공연 콘텐츠 개발, 실감콘텐츠 및 융복합 예술 콘텐츠 기획·제작 등 다양한 프로젝트를 수행해 왔다.",
     career: ["現 국립아시아문화전당재단 융합미디어사업단장 및 어린이사업본부장", "前 국립아시아문화전당재단 미디어사업TF팀장", "前 아시아문화원 창제작센터 융복합콘텐츠개발팀장", "前 한국예술종합학교 미래교육준비단(통섭원) U-AT랩 선임연구원"],
@@ -85,7 +85,7 @@ const SPEAKERS = [
     photo: "assets/speakers/son-byunghee.jpg",
     org: "마음AI",
     role: "국방AI·로보틱스 부문 대표",
-    title: "휴머노이드 10년, 피지컬 AI가 여는 문화기술(CT)의 미래: 지능형 로봇과 문화·콘텐츠 산업의 새로운 융합",
+    title: "휴머노이드 10년, 피지컬 AI가 여는 문화기술(CT)의 미래:\n지능형 로봇과 문화·콘텐츠 산업의 새로운 융합",
     summary: "향후 10년은 인공지능이 디지털 공간을 넘어 현실 세계에서 인지하고 판단하며 행동하는 피지컬 AI(Physical AI)의 시대가 될 것이다. 특히 휴머노이드와 지능형 로봇의 발전은 제조·물류 중심의 산업적 활용을 넘어 공연·전시·엔터테인먼트·문화서비스 등 문화기술(CT) 분야로 확장되며, 인간과 기술이 상호작용하는 새로운 경험을 만들어갈 것으로 전망된다. 본 강연에서는 월드모델(World Model), 시각·언어·행동 모델(VLA), 멀티모달 AI, 온디바이스 AI 등 핵심 기술을 중심으로 휴머노이드의 진화와 문화기술의 융합 가능성을 살펴본다. 나아가 가상과 현실을 연결하는 지능형 콘텐츠, 인간과 로봇의 상호작용, 문화공간의 지능화 등 미래 응용 사례를 통해 향후 10년 문화기술 산업의 변화와 새로운 연구·사업 기회를 제시한다.",
     bio: "연세대학교 전기전자공학 박사(제어 전공). 전 국민대학교 교수이자 현 한성대학교 특임교수로, 현재 마음AI 국방AI·로보틱스 부문 대표와 한국피지컬AI협회 표준협의회 의장 및 전문인재개발원장을 맡고 있다. 피지컬 AI, 지능형 로봇, 온디바이스 AI 및 자율제어 분야의 전문가로서 인공지능과 로봇 기술의 산업현장 적용 및 상용화를 추진하고 있다. 저서로는 『Physical AI』(2025) 등이 있다.",
     career: ["現 마음AI 국방AI·로보틱스 부문 대표", "現 한국피지컬AI협회 표준협의회 의장 및 전문인재개발원장", "現 한성대학교 특임교수", "前 국민대학교 교수"],
@@ -109,7 +109,7 @@ const SPEAKERS = [
     photo: "assets/speakers/kim-mikyung.jpg",
     org: "CLO Virtual Fashion",
     role: "Research Scientist",
-    title: "그림 속 옷과 몸에 맞는 옷: 패션에서 게임·영화·가상세계까지, AI 시대의 3D 의상 데이터",
+    title: "그림 속 옷과 몸에 맞는 옷:\n패션에서 게임·영화·가상세계까지, AI 시대의 3D 의상 데이터",
     summary: "옷은 패션 산업의 제품이면서, 게임과 영화, 가상세계 속 캐릭터를 완성하는 중요한 요소이기도 하다. 요즘은 생성형 AI로 옷을 입은 캐릭터 이미지를 쉽게 만들 수 있다. 하지만 그 옷이 몸에 맞는지, 움직일 때 원단이 어떻게 반응하는지, 다른 장면에서도 같은 옷으로 보이는지는 이미지만으로는 알기 어렵다. 이런 문제를 풀려면 실제 패턴과 원단 물성을 담은 3D 의상 데이터가 필요하다. 이번 강연에서는 CLO와 Marvelous Designer의 사례를 통해 3D 의상 데이터가 패션과 콘텐츠 제작을 어떻게 연결하는지 소개한다. 또한 AI를 활용해 3D 의상 데이터를 더 빠르고 정확하게 만들기 위한 CLO의 연구 방향도 함께 이야기한다.",
     bio: "KAIST 문화기술대학원에서 박사학위를 받았으며, 현재 CLO Virtual Fashion에서 Research Scientist로 3D 아바타와 의상 시뮬레이션 기술을 연구하고 있다. 물리 기반 시뮬레이션, 캐릭터 리깅 및 변형, 애니메이션 분야를 연구해 왔으며, 인체 연조직 애니메이션 연구로 SIGGRAPH에 논문을 발표했다. KAIST 문화기술연구소 박사후연구원과 대구대학교 조교수를 거쳤으며, 현재 CLO와 Marvelous Designer의 콘텐츠 제작 효율화를 위한 연구개발을 이끌고 있다.",
     career: ["現 CLO Virtual Fashion, Research Scientist", "前 대구대학교 조교수", "前 KAIST 문화기술연구소 박사후연구원", "KAIST 문화기술대학원 박사", "KAIST 수리과학과 석사"],
@@ -224,10 +224,11 @@ const SPEAKERS = [
 
   SPEAKERS.forEach((s, i) => {
     // 프로그램 시간표 안의 발표 목록: 누르지 않는 글자만 (제목 | 연사)
+    // 제목의 \n은 시간표에서만 줄을 바꾸고, 카드·팝업에서는 띄어쓰기로 보인다
     const list = document.querySelector(`.talks[data-session="${s.session}"]`);
     if (list) {
       const who = el("span", "talk-speaker");
-      who.append(el("strong", "", s.name), ` ${s.org} ${s.role}`);
+      who.append(el("strong", "", s.name), el("span", "talk-org", `${s.org} ${s.role}`));
       const item = el("li");
       item.append(el("span", "talk-title", s.title), who);
       list.append(item);
@@ -249,6 +250,24 @@ const SPEAKERS = [
   });
 
   selectSession(Object.keys(SESSIONS)[0]);
+
+  // 세션을 바꿔도 카드 크기가 그대로이도록, 모든 카드를 가장 높은 카드에 맞춘다
+  function equalizeCards() {
+    const cards = [...groups.querySelectorAll(".speaker-card")];
+    const hidden = Object.values(panels).filter((p) => p.hidden);
+    hidden.forEach((p) => (p.hidden = false));
+    cards.forEach((c) => (c.style.minHeight = ""));
+    const tallest = Math.max(...cards.map((c) => c.offsetHeight));
+    cards.forEach((c) => (c.style.minHeight = `${tallest}px`));
+    hidden.forEach((p) => (p.hidden = true));
+  }
+  equalizeCards();
+  document.fonts?.ready.then(equalizeCards);
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(equalizeCards, 150);
+  });
 
   function openSpeaker(i) {
     const s = SPEAKERS[i];
