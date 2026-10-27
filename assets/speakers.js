@@ -182,7 +182,11 @@ const SPEAKERS = [
     tab.dataset.session = no;
     tab.setAttribute("role", "tab");
     tab.setAttribute("aria-controls", `speaker-panel-${no}`);
-    tab.append(el("span", "speaker-tab-no", `Session ${no}`), el("span", "speaker-tab-name", name));
+    // 탭마다 "연사 N명 →"를 붙여 누를 수 있다는 것을 보여 준다
+    const count = SPEAKERS.filter((s) => String(s.session) === no).length;
+    const cta = el("span", "speaker-tab-cta", `연사 ${count}명 `);
+    cta.append(el("span", "speaker-tab-arrow", "→"));
+    tab.append(el("span", "speaker-tab-no", `Session ${no}`), el("span", "speaker-tab-name", name), cta);
     tab.addEventListener("click", () => selectSession(no));
     tabBar.append(tab);
     tabs.push(tab);
@@ -213,20 +217,19 @@ const SPEAKERS = [
       const on = tab.dataset.session === String(no);
       tab.setAttribute("aria-selected", on);
       tab.tabIndex = on ? 0 : -1;
+      tab.querySelector(".speaker-tab-arrow").textContent = on ? "↓" : "→";
     }
     for (const [key, panel] of Object.entries(panels)) panel.hidden = key !== String(no);
   }
 
   SPEAKERS.forEach((s, i) => {
-    // 프로그램 시간표 안의 발표 목록
+    // 프로그램 시간표 안의 발표 목록: 누르지 않는 글자만 (제목 | 연사)
     const list = document.querySelector(`.talks[data-session="${s.session}"]`);
     if (list) {
+      const who = el("span", "talk-speaker");
+      who.append(el("strong", "", s.name), ` ${s.org} ${s.role}`);
       const item = el("li");
-      const btn = el("button", "talk");
-      btn.type = "button";
-      btn.append(el("span", "talk-title", s.title), el("span", "talk-speaker", `${s.name} · ${s.org} ${s.role}`));
-      btn.addEventListener("click", () => openSpeaker(i));
-      item.append(btn);
+      item.append(el("span", "talk-title", s.title), who);
       list.append(item);
     }
 
