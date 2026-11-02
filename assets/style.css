@@ -225,11 +225,13 @@ h1, h2, h3 { line-height: 1.3; margin: 0; }
 .flow-link:hover { text-decoration: underline; }
 
 .notice-heading { font-size: 18px; margin: 44px 0 0; }
-.notice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 14px; }
-.notice-block { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; }
-.notice-block h3 { font-size: 17px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); display: inline-block; }
+.notice-grid { margin-top: 14px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
+.notice-block { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 20px 28px; }
+.notice-block + .notice-block { border-top: 1px solid var(--line); }
+.notice-block h3 { font-size: 16px; margin: 0; line-height: 1.65; }
 .notice-block ul { margin: 0; padding-left: 18px; font-size: 15px; line-height: 1.65; }
-.notice-block li { margin: 0 0 8px; }
+.notice-block li { margin: 0 0 6px; }
+.notice-block li:last-child { margin-bottom: 0; }
 .notice-block li::marker { color: var(--accent); }
 .notice-block a { color: var(--accent); }
 
@@ -321,7 +323,7 @@ input:focus, select:focus, textarea:focus {
 @media (max-width: 880px) {
   .flow { grid-template-columns: 1fr; gap: 26px; }
   .flow-card:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -24px; transform: translateX(-50%); }
-  .notice-grid { grid-template-columns: 1fr; }
+  .notice-block { grid-template-columns: 1fr; gap: 8px; padding: 18px 20px; }
   .talks li { grid-template-columns: 1fr 220px; }
   .two-col { grid-template-columns: 1fr; gap: 24px; }
   .speaker-panel { grid-template-columns: 1fr; }
