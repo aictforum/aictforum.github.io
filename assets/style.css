@@ -117,10 +117,19 @@ h1, h2, h3 { line-height: 1.3; margin: 0; }
 .tt-time { font-variant-numeric: tabular-nums; color: var(--muted); }
 .tt-sub { display: block; color: var(--muted); font-size: 14px; margin-top: 2px; }
 .tt-row.is-break { background: var(--bg-alt); color: var(--muted); }
-.tt-row.is-session { padding-top: 22px; padding-bottom: 22px; border-left: 4px solid var(--accent); padding-left: 20px; }
-.tt-row.is-session .tt-time { color: var(--accent); font-weight: 700; }
-.session-no { display: block; color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: 0.03em; }
+.tt-row.is-session {
+  --session-color: var(--accent); --session-fill: var(--accent);
+  padding-top: 22px; padding-bottom: 22px; border-left: 4px solid var(--session-color); padding-left: 20px;
+}
+.tt-row.is-session .tt-time { color: var(--session-fill); font-weight: 700; }
+.session-no { display: block; color: var(--session-fill); font-size: 13px; font-weight: 700; letter-spacing: 0.03em; }
 .tt-row.is-session h3 { font-size: 20px; margin: 2px 0 14px; }
+.session-chair { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; margin: -6px 0 14px; font-size: 14px; color: var(--muted); }
+.session-chair strong { color: var(--text); }
+.chair-label {
+  display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 700;
+  color: var(--session-fill, var(--accent)); background: color-mix(in srgb, var(--session-color, var(--accent)) 14%, transparent);
+}
 
 .talks { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .talks li {
@@ -141,11 +150,13 @@ h1, h2, h3 { line-height: 1.3; margin: 0; }
   padding: 16px 18px 14px; cursor: pointer;
   transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s, background 0.15s;
 }
-.speaker-tab[data-session="2"], .speaker-panel[data-session="2"] { --session-color: #8a7dff; --session-fill: #6c5ce7; }
-.speaker-tab[data-session="3"], .speaker-panel[data-session="3"] { --session-color: var(--accent-2); --session-fill: #0b8a91; }
+/* 세션 색: 연사 탭·카드와 프로그램 시간표가 함께 쓴다 (color는 테두리·강조, fill은 채움·글자) */
+.speaker-tab[data-session="1"], .speaker-panel[data-session="1"], .tt-row[data-session="1"] { --session-color: var(--accent); --session-fill: var(--accent); }
+.speaker-tab[data-session="2"], .speaker-panel[data-session="2"], .tt-row[data-session="2"] { --session-color: #f08a24; --session-fill: #c8610a; }
+.speaker-tab[data-session="3"], .speaker-panel[data-session="3"], .tt-row[data-session="3"] { --session-color: var(--accent-2); --session-fill: #0b8a91; }
 .speaker-tab:hover { border-color: var(--session-color); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(13, 18, 38, 0.08); }
 .speaker-tab:focus-visible { outline: 3px solid var(--session-color); outline-offset: 2px; }
-.speaker-tab-no { font-size: 13px; font-weight: 800; letter-spacing: 0.03em; color: var(--session-color); }
+.speaker-tab-no { font-size: 13px; font-weight: 800; letter-spacing: 0.03em; color: var(--session-fill); }
 .speaker-tab-name { font-size: 16px; font-weight: 700; line-height: 1.4; flex: 1; }
 .speaker-tab-cta { margin-top: 10px; font-size: 14px; font-weight: 700; color: var(--session-fill); }
 .speaker-tab-arrow { display: inline-block; transition: transform 0.15s; }
@@ -166,6 +177,10 @@ h1, h2, h3 { line-height: 1.3; margin: 0; }
 .speaker-panel { --session-color: var(--accent); display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
 .speaker-panel[hidden] { display: none; }
 .speaker-panel-caption { display: none; grid-column: 1 / -1; margin: 0; font-weight: 800; font-size: 17px; }
+.speaker-chair { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; padding: 4px 2px 6px; }
+.speaker-chair-photo { flex: none; width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: center 25%; background: var(--bg-alt); }
+.speaker-chair-text { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; font-size: 15px; }
+.speaker-chair-org { color: var(--muted); font-size: 14px; }
 .speaker-card {
   display: flex; gap: 18px; align-items: flex-start; text-align: left; font: inherit; color: inherit;
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
@@ -182,7 +197,7 @@ h1, h2, h3 { line-height: 1.3; margin: 0; }
 .speaker-name { font-size: 18px; font-weight: 800; }
 .speaker-org { color: var(--muted); font-size: 14px; line-height: 1.45; margin-top: 2px; }
 .speaker-title { font-size: 15px; font-weight: 500; line-height: 1.5; margin: 10px 0 10px; flex: 1; }
-.speaker-more { color: var(--session-color); font-size: 14px; font-weight: 600; }
+.speaker-more { color: var(--session-fill); font-size: 14px; font-weight: 600; }
 
 .speaker-dialog {
   width: min(680px, calc(100vw - 32px)); max-height: calc(100vh - 64px);

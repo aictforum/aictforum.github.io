@@ -9,6 +9,13 @@ const SESSIONS = {
   3: "AI 기반 콘텐츠 제작과 산업 활용",
 };
 
+// 세션 좌장. 출처: 「2026 포럼 - 좌장정보(포스터제작용).pdf」
+const CHAIRS = {
+  1: { name: "신춘성", photo: "assets/speakers/shin-choonsung.jpg", org: "전남대학교", role: "문화전문대학원 교수" },
+  2: { name: "윤정원", photo: "assets/speakers/yoon-jungwon.jpg", org: "광주과학기술원(GIST)", role: "한국문화기술연구소 소장" },
+  3: { name: "문재영", photo: "assets/speakers/moon-jaeyoung.jpg", org: "동덕여자대학교", role: "HCI사이언스학과 조교수" },
+};
+
 const SPEAKERS = [
   // Session 1
   {
@@ -198,6 +205,23 @@ const SPEAKERS = [
     panel.setAttribute("aria-labelledby", tab.id);
     // 좁은 화면에서는 탭에 세션 번호만 보이므로 세션 제목을 따로 보여 준다
     panel.append(el("p", "speaker-panel-caption", name));
+    const chair = CHAIRS[no];
+    if (chair) {
+      // 세션 좌장: 연사 카드와 구분되게 누르지 않는 한 줄로
+      const strip = el("div", "speaker-chair");
+      const text = el("span", "speaker-chair-text");
+      text.append(el("span", "chair-label", "좌장"), el("strong", "", chair.name), el("span", "speaker-chair-org", `${chair.org} ${chair.role}`));
+      strip.append(photo(chair, "speaker-chair-photo"), text);
+      panel.append(strip);
+
+      // 프로그램 시간표: 세션 제목 아래 좌장
+      const list = document.querySelector(`.talks[data-session="${no}"]`);
+      if (list) {
+        const line = el("p", "session-chair");
+        line.append(el("span", "chair-label", "좌장"), el("strong", "", chair.name), el("span", "talk-org", `${chair.org} ${chair.role}`));
+        list.before(line);
+      }
+    }
     panels[no] = panel;
   }
   groups.append(tabBar, ...Object.values(panels));
