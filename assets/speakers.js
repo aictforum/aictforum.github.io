@@ -9,10 +9,10 @@ const SESSIONS = {
   3: "AI 기반 콘텐츠 제작과 산업 활용",
 };
 
-// 세션 좌장. 출처: 「2026 포럼 - 좌장정보(포스터제작용).pdf」
+// 세션 좌장. 출처: 「2026 포럼」 시트의 좌장정보(포스터제작용), 11/2 변경(세션 1 윤정원, 세션 2 섭외 중).
+// 좌장이 정해지지 않은 세션은 빼 두면 그 세션에는 좌장 줄이 나오지 않습니다.
 const CHAIRS = {
-  1: { name: "신춘성", photo: "assets/speakers/shin-choonsung.jpg", org: "전남대학교", role: "문화전문대학원 교수" },
-  2: { name: "윤정원", photo: "assets/speakers/yoon-jungwon.jpg", org: "광주과학기술원(GIST)", role: "한국문화기술연구소 소장" },
+  1: { name: "윤정원", photo: "assets/speakers/yoon-jungwon.jpg", org: "광주과학기술원(GIST)", role: "한국문화기술연구소 소장" },
   3: { name: "문재영", photo: "assets/speakers/moon-jaeyoung.jpg", org: "동덕여자대학교", role: "HCI사이언스학과 조교수" },
 };
 

@@ -126,6 +126,8 @@ h1, h2, h3 { line-height: 1.3; margin: 0; }
 .tt-row.is-session h3 { font-size: 20px; margin: 2px 0 14px; }
 .session-chair { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; margin: -6px 0 14px; font-size: 14px; color: var(--muted); }
 .session-chair strong { color: var(--text); }
+.tt-people { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; font-size: 15px; }
+.tt-people li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
 .chair-label {
   display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 700;
   color: var(--session-fill, var(--accent)); background: color-mix(in srgb, var(--session-color, var(--accent)) 14%, transparent);
