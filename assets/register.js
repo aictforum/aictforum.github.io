@@ -52,7 +52,6 @@ function collect() {
   // 관심 세션은 여러 개 고를 수 있어 "세션1, 세션3"처럼 묶어 보낸다
   data.interest = fd.getAll("interest").join(", ");
   data.agreePrivacy = form.elements.agreePrivacy.checked;
-  data.agreeNews = form.elements.agreeNews.checked;
   return data;
 }
 
