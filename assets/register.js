@@ -91,10 +91,10 @@ form.addEventListener("submit", async (event) => {
     if (result.ok) {
       showDone(data.name, result.id);
     } else {
-      showError(result.message || "등록 중 문제가 생겼습니다. 잠시 후 다시 시도해 주세요.");
+      showError(result.message || "등록 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
     }
   } catch (err) {
-    showError("서버와 연결하지 못했습니다. 잠시 후 다시 시도하거나 문의처로 연락해 주세요.");
+    showError("서버에 연결할 수 없습니다. 잠시 후 다시 시도하거나 문의처로 연락해 주세요.");
   } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = "사전등록 신청";
