@@ -208,8 +208,8 @@ h1, h2, h3 { line-height: 1.3; margin: 0; }
 .dialog-career li { margin: 2px 0; }
 
 /* 참가 안내 */
-/* 할 일(실선)과 자동 진행(점선) 카드를 화살표로 잇는다 */
-.flow { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; margin-top: 24px; }
+/* 참가 방법 3단계 */
+.flow { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .flow-card {
   position: relative; background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--accent);
   border-radius: var(--radius); padding: 20px 22px;
@@ -218,17 +218,9 @@ h1, h2, h3 { line-height: 1.3; margin: 0; }
   content: "→"; position: absolute; right: -22px; top: 50%; transform: translateY(-50%);
   color: var(--muted); font-weight: 700; font-size: 18px;
 }
-.flow-card.is-auto { background: transparent; border: 1.5px dashed #b9bdcc; border-radius: var(--radius); }
-.flow-tag {
-  display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--accent); color: #fff;
-  font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
-}
-.is-auto .flow-tag { background: transparent; color: var(--muted); border: 1px solid #b9bdcc; }
-.flow-card h3 { font-size: 18px; margin: 10px 0 6px; }
-.is-auto h3 { color: var(--muted); }
+.flow-no { display: block; color: var(--accent); font-size: 14px; font-weight: 800; letter-spacing: 0.06em; }
+.flow-card h3 { font-size: 18px; margin: 6px 0 8px; }
 .flow-card p { margin: 0 0 6px; font-size: 15px; line-height: 1.6; }
-.is-auto p { color: var(--muted); }
-.flow-small { font-size: 14px !important; }
 .flow-link { display: inline-block; margin-top: 4px; color: var(--accent); font-weight: 700; font-size: 14px; text-decoration: none; }
 .flow-link:hover { text-decoration: underline; }
 
