@@ -276,11 +276,14 @@ const SPEAKERS = [
   selectSession(Object.keys(SESSIONS)[0]);
 
   // 세션을 바꿔도 카드 크기가 그대로이도록, 모든 카드를 가장 높은 카드에 맞춘다
+  // 카드가 한 줄에 하나씩 놓이는 좁은 화면(style.css의 880px 기준)에서는 빈칸이 커 보여 맞추지 않는다
+  const singleColumn = window.matchMedia("(max-width: 880px)");
   function equalizeCards() {
     const cards = [...groups.querySelectorAll(".speaker-card")];
+    cards.forEach((c) => (c.style.minHeight = ""));
+    if (singleColumn.matches) return;
     const hidden = Object.values(panels).filter((p) => p.hidden);
     hidden.forEach((p) => (p.hidden = false));
-    cards.forEach((c) => (c.style.minHeight = ""));
     const tallest = Math.max(...cards.map((c) => c.offsetHeight));
     cards.forEach((c) => (c.style.minHeight = `${tallest}px`));
     hidden.forEach((p) => (p.hidden = true));
