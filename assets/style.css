@@ -339,6 +339,7 @@ input:focus, select:focus, textarea:focus {
 
 /* 모바일 */
 @media (max-width: 880px) {
+  .br-pc { display: none; }
   .flow { grid-template-columns: 1fr; gap: 26px; }
   .flow-card:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -24px; transform: translateX(-50%); }
   .notice-block { grid-template-columns: 1fr; gap: 8px; padding: 18px 20px; }
