@@ -215,14 +215,12 @@ const SPEAKERS = [
       strip.append(photo(chair, "speaker-chair-photo"), text);
       panel.append(strip);
 
-      // 프로그램 시간표: 좌장은 세션 종합토론 줄에 (발표 진행은 사회자가 맡음)
+      // 프로그램 시간표: 좌장은 세션 종합토론 줄 제목 뒤에 이어서, 발표 목록의 연사 표기와 같은 글자로 (발표 진행은 사회자가 맡음)
       const discussion = document.querySelector(`.tt-row.is-discussion[data-session="${no}"] .tt-what`);
       if (discussion) {
-        const line = el("li");
-        line.append(el("span", "chair-label", "좌장"), el("strong", "", chair.name), el("span", "", `${chair.org} ${chair.role}`));
-        const people = el("ul", "tt-people");
-        people.append(line);
-        discussion.append(people);
+        const who = el("span", "discussion-chair");
+        who.append(el("span", "discussion-chair-dash", "– "), "좌장 ", el("strong", "", chair.name), ` ${chair.org} ${chair.role}`);
+        discussion.append(who);
       }
     }
     panels[no] = panel;

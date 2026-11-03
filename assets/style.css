@@ -151,6 +151,8 @@ h1, h2, h3 { line-height: 1.3; margin: 0; }
 .tt-row.is-session .tt-time { color: var(--session-fill); font-weight: 700; }
 .session-no { display: block; color: var(--session-fill); font-size: 13px; font-weight: 700; letter-spacing: 0.03em; }
 .tt-row.is-session h3 { font-size: 20px; margin: 2px 0 14px; }
+.discussion-chair { margin-left: 14px; color: var(--muted); font-size: 14px; }
+.discussion-chair strong { color: var(--text); font-weight: 700; }
 .tt-people { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; font-size: 15px; }
 .tt-people li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
 .chair-label {
@@ -384,6 +386,8 @@ input:focus, select:focus, textarea:focus {
   .tt-row { grid-template-columns: 1fr; gap: 2px; padding: 12px 18px; }
   .tt-row.is-session { padding-left: 14px; }
   .talks li { grid-template-columns: 1fr; }
+  .discussion-chair { display: block; margin: 2px 0 0; }
+  .discussion-chair-dash { display: none; }
   .venue-map { height: 300px; }
   .dialog-body { padding: 28px 20px 24px; }
   .dialog-photo { width: 84px; height: 112px; }
