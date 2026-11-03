@@ -219,7 +219,7 @@ const SPEAKERS = [
       const discussion = document.querySelector(`.tt-row.is-discussion[data-session="${no}"] .tt-what`);
       if (discussion) {
         const who = el("span", "discussion-chair");
-        who.append(el("span", "discussion-chair-dash", "– "), "좌장 ", el("strong", "", chair.name), ` ${chair.org} ${chair.role}`);
+        who.append("좌장 ", el("strong", "", chair.name), ` ${chair.org} ${chair.role}`);
         discussion.append(who);
       }
     }
