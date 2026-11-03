@@ -215,12 +215,14 @@ const SPEAKERS = [
       strip.append(photo(chair, "speaker-chair-photo"), text);
       panel.append(strip);
 
-      // 프로그램 시간표: 세션 제목 아래 좌장
-      const list = document.querySelector(`.talks[data-session="${no}"]`);
-      if (list) {
-        const line = el("p", "session-chair");
-        line.append(el("span", "chair-label", "좌장"), el("strong", "", chair.name), el("span", "talk-org", `${chair.org} ${chair.role}`));
-        list.before(line);
+      // 프로그램 시간표: 좌장은 세션 종합토론 줄에 (발표 진행은 사회자가 맡음)
+      const discussion = document.querySelector(`.tt-row.is-discussion[data-session="${no}"] .tt-what`);
+      if (discussion) {
+        const line = el("li");
+        line.append(el("span", "chair-label", "좌장"), el("strong", "", chair.name), el("span", "", `${chair.org} ${chair.role}`));
+        const people = el("ul", "tt-people");
+        people.append(line);
+        discussion.append(people);
       }
     }
     panels[no] = panel;
