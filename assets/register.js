@@ -55,9 +55,11 @@ function collect() {
   return data;
 }
 
-function showDone(name, id) {
+function showDone(name, id, email) {
   document.getElementById("done-name").textContent = name;
   document.getElementById("done-id").textContent = id;
+  // 이메일을 잘못 넣은 경우 바로 알아차릴 수 있게 입력한 주소를 그대로 보여 줍니다.
+  document.getElementById("done-email").textContent = email;
   form.hidden = true;
   const done = document.getElementById("reg-done");
   done.hidden = false;
@@ -78,7 +80,7 @@ form.addEventListener("submit", async (event) => {
   }
 
   if (!REGISTRATION_ENDPOINT) {
-    showDone(data.name, "TEST-0000 (테스트 모드: 저장되지 않음)");
+    showDone(data.name, "TEST-0000 (테스트 모드: 저장되지 않음)", data.email);
     return;
   }
 
@@ -89,7 +91,7 @@ form.addEventListener("submit", async (event) => {
     const res = await fetch(REGISTRATION_ENDPOINT, { method: "POST", body: JSON.stringify(data) });
     const result = await res.json();
     if (result.ok) {
-      showDone(data.name, result.id);
+      showDone(data.name, result.id, data.email);
     } else {
       showError(result.message || "등록 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
     }
@@ -101,8 +103,34 @@ form.addEventListener("submit", async (event) => {
   }
 });
 
+// 휴대전화는 숫자만 쳐도 예시(010-0000-0000)처럼 하이픈이 자동으로 들어갑니다. "+"로 시작하는 해외 번호는 그대로 둡니다.
+function formatPhone(value) {
+  if (value.trim().startsWith("+")) return value;
+  const d = value.replace(/\D/g, "").slice(0, 11);
+  if (d.length < 4) return d;
+  if (d.startsWith("010") || d.length === 11) {
+    return d.length < 8 ? `${d.slice(0, 3)}-${d.slice(3)}` : `${d.slice(0, 3)}-${d.slice(3, 7)}-${d.slice(7)}`;
+  }
+  if (d.length < 7) return `${d.slice(0, 3)}-${d.slice(3)}`;
+  return `${d.slice(0, 3)}-${d.slice(3, 6)}-${d.slice(6)}`;
+}
+
+function onPhoneInput(input) {
+  // 중간을 고칠 때 커서가 끝으로 튀지 않게, 커서 앞 숫자 개수를 기준으로 자리를 되찾습니다.
+  const digitsBefore = input.value.slice(0, input.selectionStart).replace(/\D/g, "").length;
+  const formatted = formatPhone(input.value);
+  if (formatted === input.value) return;
+  input.value = formatted;
+  let pos = 0;
+  for (let seen = 0; pos < formatted.length && seen < digitsBefore; pos++) {
+    if (/\d/.test(formatted[pos])) seen++;
+  }
+  input.setSelectionRange(pos, pos);
+}
+
 // 입력을 고치면 빨간 표시를 지웁니다.
 form.addEventListener("input", (event) => {
   const name = event.target.name;
+  if (name === "phone") onPhoneInput(event.target);
   if (name in REQUIRED_MESSAGES || name === "email" || name === "phone") markInvalid(name, false);
 });
