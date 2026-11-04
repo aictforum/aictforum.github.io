@@ -1,6 +1,6 @@
 // 구글 Apps Script 웹 앱 주소. 설치안내.md "현재 연결 상태"의 웹 앱 URL을 따옴표 안에 붙여 넣으면 접수가 열립니다.
-// 비워 두면 테스트 모드로 동작합니다(신청 내용이 어디에도 저장되지 않음). 지금은 미리보기 기간이라 비워 둠.
-const REGISTRATION_ENDPOINT = "";
+// 비워 두면 테스트 모드로 동작합니다(신청 내용이 어디에도 저장되지 않음). 11/4 담당자 테스트를 위해 연결.
+const REGISTRATION_ENDPOINT = "https://script.google.com/macros/s/AKfycbydwuAd910ASGjvKh9WHTBljxlxpU6MrePOXKSE4jvGjLHg_mScdin4b29cuB-1CA/exec";
 
 const form = document.getElementById("reg-form");
 const errorBox = document.getElementById("form-error");
