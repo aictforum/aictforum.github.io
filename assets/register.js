@@ -55,9 +55,10 @@ function collect() {
   return data;
 }
 
-function showDone(name, id, email) {
+// 등록번호는 시트 관리용이라 참가자에게 보여 주지 않습니다.
+function showDone(name, email, testMode) {
   document.getElementById("done-name").textContent = name;
-  document.getElementById("done-id").textContent = id;
+  if (testMode) document.querySelector("#reg-done h3").textContent = "테스트 모드: 신청 내용은 저장되지 않았습니다";
   // 이메일을 잘못 넣은 경우 바로 알아차릴 수 있게 입력한 주소를 그대로 보여 줍니다.
   document.getElementById("done-email").textContent = email;
   form.hidden = true;
@@ -80,7 +81,7 @@ form.addEventListener("submit", async (event) => {
   }
 
   if (!REGISTRATION_ENDPOINT) {
-    showDone(data.name, "TEST-0000 (테스트 모드: 저장되지 않음)", data.email);
+    showDone(data.name, data.email, true);
     return;
   }
 
@@ -91,7 +92,7 @@ form.addEventListener("submit", async (event) => {
     const res = await fetch(REGISTRATION_ENDPOINT, { method: "POST", body: JSON.stringify(data) });
     const result = await res.json();
     if (result.ok) {
-      showDone(data.name, result.id, data.email);
+      showDone(data.name, data.email);
     } else {
       showError(result.message || "등록 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
     }
