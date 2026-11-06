@@ -9,7 +9,7 @@
 |---|---|
 | `index.html` | 한 페이지 본문: 소개 → 연사 → 프로그램 → 참가 방법 → 사전등록 → 오시는 길 |
 | `assets/style.css` | 디자인 전체. 색은 맨 위 `:root` 변수(`--accent` 보라, `--accent-2` 청록) |
-| `assets/speakers.js` | 세션 제목(`SESSIONS`)과 연사 12명 정보(`SPEAKERS`), 연사 탭·카드·팝업과 프로그램 발표 목록을 그리는 코드 |
+| `assets/speakers.js` | 세션 제목(`SESSIONS`)과 연사 11명 정보(`SPEAKERS`), 연사 탭·카드·팝업과 프로그램 발표 목록을 그리는 코드 |
 | `assets/speakers/*.jpg` | 연사 사진 360×480 (게재 허락 받음) |
 | `assets/register.js` | 신청서 확인·전송 |
 

@@ -32,17 +32,6 @@ const SPEAKERS = [
   },
   {
     session: 1,
-    name: "안강훈",
-    photo: "assets/speakers/ahn-kanghoon.jpg",
-    org: "광주과학기술원(GIST)",
-    role: "인문사회과학부 조교수",
-    title: "예술과 감각 그리고 미디어",
-    summary: "예술이란 무엇인가? 예술은 감각과 어떤 관계를 맺는가? 예술에서 신체는 왜 중요한가? 예술과 감각, 그리고 미디어는 어떤 관계를 맺는가?",
-    bio: "미국 하버드대학교에서 철학 박사 학위를 취득하였으며, 현재 광주과학기술원(GIST) 인문사회과학부 조교수로 재직하고 있다. 동서양의 철학 전통을 바탕으로 미학과 예술철학, 신체와 감각의 문제 등을 연구하고 있다.",
-    career: ["現 광주과학기술원 인문사회과학부 조교수", "미국 하버드대학교 철학박사"],
-  },
-  {
-    session: 1,
     name: "김영민",
     photo: "assets/speakers/kim-youngmin.jpg",
     org: "한국전자기술연구원(KETI)",
